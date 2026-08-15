@@ -4,42 +4,79 @@ body {
 
 h1 {
     text-align: center;
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 32px;
 }
 
-a {
-    color: #000;
-    text-decoration: none;
-    font-family:Arial, sans-serif;
-}
-
 p {
-   font-size: 25px;
-   font-family:Arial, sans-serif;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-img{
-  width:100%;
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
 }
 
-
-p{
-  text-align:center;
+figure {
+    margin: 0;
+    padding: 10px;
+    border: 2px solid #000;
 }
 
-div img{
-    width:150px;
-    height: 150px;
-    display:block;
-    margin:auto;
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-div{
-  display: inline-block;
-  width: 24%;
-  margin: 5px;
-  padding: 2px;
+figcaption {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+@media (min-width: 772px) {
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    figure {
+        border-radius: 50%;
+    }
+
+    figure:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 992px) {
+
+    figure:nth-child(3n) {
+        grid-column: 1 / -1;
+    }
+
+    figure {
+        border-radius: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    figure {
+        background-color: #222;
+        color: #ffff99;
+        border-color: #000;
+    }
 }
 
 
